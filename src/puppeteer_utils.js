@@ -266,6 +266,7 @@ const crawl = async opt => {
     processed++;
     if (enqued === processed) {
       streamClosed = true;
+      setTimeout(() => queue.end(), 1);
       queue.end();
     }
     return pageUrl;
